@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript">
+	/*function ddlGenderSelectionChanged()
+	{
+		alert('You selected ' + document.getElementById('ddlGender').value);
+	}*/
+//	var myArray = ["Tom","Ram","Mukta","Test"];
+	//myArray.sort();
+	//document.write(myArray);
+
+
+	var myArray = [1,45,67,22,2,252,102];
+	//myArray.sort(function(a,b) {return a-b}).reverse();
+	//document.write(myArray);
+
+	myArray.splice(2,0,134,46);
+	document.write(myArray);
+
+</script>
+</head>
+
+
+<body>
+
+<form id="form1">
+<div>
+<select id="ddlGender" onchange="ddlGenderSelectionChanged()"> 
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+</form> 
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript">
+function createArguments()
+{
+	document.write("Arguments length was: " + arguments.length);
+	document.write("<br/>");
+	for(var i = 0; i < arguments.length; i++)
+	{
+		document.write("value of "+ i + " = " +arguments[i] );
+		document.write("<br/>");
+	}
+
+}
+createArguments();
+createArguments(10,20);
+
+
+
+// using arguments variable
+function sumArguments()
+{
+	var sum = 0;
+	document.write("Arguments length was: " + arguments.length);
+	document.write("<br/>");
+	for( var i = 0; i < arguments.length; i++)
+	{
+		sum = sum + arguments[i];
+		//document.write("value of "+ i + " = " +arguments[i] );
+
+	}
+document.write("sum = "+sum);
+}
+sumArguments();
+sumArguments(10,20);
+
+//javascript arguments is not array.. but we can convert arguments to array
+
+function number()
+{
+	var argArray = Array.prototype.slice.call(arguments);
+	argArray.sort();
+	document.write(argArray);
+}
+number(50,67,20);
+
+</script>
+</head>
+<body>
+<form>
+	
+
+</form>
+</body>
+
+
+</html>

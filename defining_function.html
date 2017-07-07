@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript">
+/*function addNumbers(fisrtNumber, secondNumber)
+{
+   var res = fisrtNumber + secondNumber;
+   return res;
+}
+
+var out = addNumbers(10,20);
+document.write(out);
+*/
+/*var out = addNumbers(10,20);
+document.write(out);
+
+function addNumbers(fisrtNumber, secondNumber)
+{
+   var res = fisrtNumber + secondNumber;
+   return res;
+}
+*/ 
+/* announoumes function expression */
+var addNumbers = function (fisrtNumber, secondNumber)
+{
+   var res = fisrtNumber + secondNumber;
+   return res;
+}
+var out = addNumbers(10,50);
+document.write(out);
+
+
+/* named function expression */
+
+var result = function comp(number)
+{
+	if(number<=1)
+	{
+		return 1;
+	}
+	else {
+		return number * comp(number-1);
+	}
+}
+
+var result1 = result(5);
+document.write(result1);
+
+</script>
+</head>
+<body>
+<form>
+	
+
+</form>
+</body>
+
+
+</html>

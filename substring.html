@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript">
+ function getEmail()
+{
+	var emailId = document.getElementById("emailId").value;
+	var emailName = emailId.substring(0,emailId.indexOf('@'));
+	var doaminName = emailId.substring(emailId.indexOf('@')+1);
+	document.getElementById("emailName").value = emailName;
+	document.getElementById("doaminName").value = doaminName;
+}
+
+</script>
+</head>
+<body>
+<form>
+	
+	Emailid <input type="text" name="emailId" id="emailId">
+	Email name  <input type="text" name="emailName" id="emailName">
+	Domain name <input type="text" name="doaminName" id="doaminName">
+	<input type="button" name="submit" onclick="getEmail()">
+</form>
+</body>
+
+
+</html>
