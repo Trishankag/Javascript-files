@@ -1,0 +1,25 @@
+<html>
+<head></head>
+<!-- using oncontextmenu attribute-->
+<!--  <body oncontextmenu="return false;"> -->
+<body>
+	<h1>Right click is disabled</h1>
+
+	<script>
+	/* using event object*/
+    document.oncontextmenu = disableRightClick;
+	function disableRightClick(event)
+
+	{
+           event = event || window.event;
+           if (event.preventDefault)
+           {
+           	 event.preventDefault();
+           }else
+           {
+           	 event.returnValue =false;
+           }
+	}
+	</script>
+</body>
+</html>

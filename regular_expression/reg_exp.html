@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" name="data" id="data"><br/>
+<input type="button" name="" value="processString" onclick="numValue()"><br/>
+<textarea id="txtArea" rows="10" cols="10"></textarea>
+<script type="text/javascript">
+	function numValue()
+	{
+		document.getElementById('txtArea').value ='';
+		var input = document.getElementById('data').value;
+		var result = input.match(/\d+/g);
+		if(result!=null)
+		{
+			for(i=0;i<result.length;i++)
+			{
+				document.getElementById('txtArea').value += result[i] + "\r\n";
+			}
+		}
+		//alert (result);
+	}
+
+</script>
+</body>
+</html>

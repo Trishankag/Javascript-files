@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+
+</head>
+<body>
+<!-- call onmouseout and onmouseover event by attribute-->
+<input type="button" value="click me" id="btn" onmouseover="this.style.background='red'; this.style.color='yellow'" onmouseout="this.style.background='black'; this.style.color='white'"/>
+
+<br/><br/><br/><br/><br/><br/>
+
+<input type="button" value="click me" id="btn1" onmouseover="changeButtonColor()" onmouseout="changeColorMouseOut()"/>
+
+<br/><br/><br/>
+<input type="submit" value="submit" id="btn" onclick="return showDialog()">
+
+<br/><br/><br/>
+
+
+First Name <input type="text" name="fname" id="fname" onkeyup="validateField('fname')" onblur="validateField('fname')">
+Last Name <input type="text" name="lname" id="lname" onkeyup="validateField('lname')" onblur="validateField('lname')">
+
+<script type="text/javascript">
+/* onmouseover and onmouseout function*/
+
+function changeButtonColor(){
+
+	var control = document.getElementById('btn1');
+	control.style.background='red';
+	control.style.color='yellow';
+
+}
+
+function changeColorMouseOut(){
+
+	var control = document.getElementById('btn1');
+	control.style.background='black';
+	control.style.color='white';
+
+}
+
+/* show confirmation dialog in javascript*/
+
+function showDialog()
+{
+	if(confirm("Are you sure you want to submit"))
+	{
+		alert("You selected ok");
+		return true;
+	}else
+	{
+		alert("you selected cancel");
+		return false;
+	}
+}
+
+/* form validation */
+function validateField(controlId)
+{
+   var control = document.getElementById(controlId);
+   if(control.value=='')
+   {
+   	control.style.background = 'red';
+   }
+   else
+   {
+   	 control.style.background = 'green';
+   }
+}
+</script>
+
+</body>
+
+
+</html>
