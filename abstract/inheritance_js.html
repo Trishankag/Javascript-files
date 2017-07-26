@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript">
+	// create a abstract shape class
+
+    var Shape = function()
+    {
+        this.shapeName = "None";
+        throw new Error("Cannot create an instance of abstract class");
+    }
+    Shape.prototype.draw = function()
+    {
+        return "Drawing " + this.shapeName;
+    }
+    // create another object
+
+    var Circle = function(shapeName)
+    {
+         this.shapeName = "shapeName";
+    }
+
+    //make shape the parent for circle
+
+    Circle.prototype = Object.create(Shape.prototype);
+
+    var circle = new Circle("round");
+    document.write(circle.draw());
+    alert(circle instanceof Circle);
+
+</script>
+</head>
+
+
+<body>
+
+
+
+</body>
+</html>
