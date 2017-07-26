@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript">
+	// creating a base object
+
+	var Employee = function(name)
+	{
+		this.name = name;
+	}
+    
+    //creating a function for base object
+
+    Employee.prototype.getName = function()
+    {
+    	return this.name;
+    }
+
+// added a new method for base object
+    Employee.prototype.getNameLength = function()
+    {
+    	return this.name.length;
+    }
+    //creating a derived object
+	var ParmanentEmployee = function(salary)
+	{
+		this.salary = salary;
+	}
+// creating instance of employee type
+   var emp = new Employee("Mark");
+// use prototype to associate Employee as a base object for permanantEmployee
+
+ParmanentEmployee.prototype = emp;
+
+// creating instance of permanantemployee type
+var pe = new ParmanentEmployee("20000");
+
+document.write(pe.getName()+ "<br/><br/>");
+document.write(pe.getNameLength()+ "<br/><br/>");
+document.write("employee name : " + emp.hasOwnProperty("name")+"<br/>");
+alert(pe instanceof Employee);
+
+alert(pe instanceof ParmanentEmployee);
+
+</script>
+</head>
+
+
+<body>
+
+
+
+</body>
+</html>

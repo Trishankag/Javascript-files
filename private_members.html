@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript">
+function Employee(firstName,lastName)
+{
+	//public variable
+	this.firstName = firstName;
+	this.lastName = lastName;
+
+	//private variable
+
+	var privatenewname;
+
+	//private functions
+	var privateGetFullName = function()
+	{
+		privatenewname = firstName + " " + lastName;
+		return privatenewname;
+	}
+
+	//privileged function
+
+	this.privilegedGetFullName = function()
+	{
+		return privateGetFullName();
+	}
+
+	//public functions
+   Employee.prototype.publicGetFullName = function()
+   {
+   	return this.privilegedGetFullName();
+   }
+                                                           
+  }
+
+   var employee = new Employee("Trish", "Ghosh");
+   document.write(employee.publicGetFullName());
+</script>
+</head>
+<body>
+<form>
+	
+
+</form>
+</body>
+
+
+</html>

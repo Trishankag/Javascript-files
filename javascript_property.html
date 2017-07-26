@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+
+</head>
+<body>
+<script type="text/javascript">
+	
+ function Employee(name,age)
+ {
+   var _name = name;
+   var _age = age;
+   Object.defineProperty(this,"age",
+   {
+   	get : function(){
+
+   		return _age;
+   	},
+   	set : function(value)
+   	{
+   		if(value >1 || value<100)
+   		{
+   			alert("Invalid age");
+   		}
+   		else{
+   		_age = value;
+   	}
+
+   	}
+   })
+
+    Object.defineProperty(this,"name", {
+
+    	get: function(){
+    		return _name;
+    	}
+
+    	})
+ }
+var employee = new Employee("Trish", 27);
+employee.age = 10;
+employee.name = "Tommy";
+alert(employee.name + " " + employee.age );
+</script>
+</body>
+
+
+</html>
