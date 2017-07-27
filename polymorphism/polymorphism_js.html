@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript">
+ //shape object is the base object
+ var Shape = function()
+ {
+
+ }
+// create draw function under base object
+Shape.prototype.draw = function()
+{
+	return "I am a generic shape";
+}
+// create a square object
+var square = function()
+{
+
+}
+square.prototype = Object.create(Shape.prototype);
+
+square.prototype.draw = function()
+{
+	return "I am a square";
+}
+
+// create a circle object
+var circle = function()
+{
+
+}
+circle.prototype = Object.create(Shape.prototype);
+
+circle.prototype.draw = function()
+{
+	return "I am a circle";
+}
+
+//
+var triangle = function()
+{}
+triangle.prototype = Object.create(Shape.prototype);
+
+var shapes = [new Shape(), new square(), new circle(), new triangle()];
+shapes.forEach(function(entry) {
+   document.write(entry.draw() + "<br/>");
+});
+</script>
+</head>
+
+
+<body>
+
+
+
+</body>
+</html>

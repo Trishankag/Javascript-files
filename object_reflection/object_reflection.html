@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var Employee= function(firstName,lastName,gender,email)
+		{
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.gender = gender;
+			this.email = email;
+		}
+
+		Employee.prototype.getFullName = function()
+		{
+			return this.firstName + " " + this.lastName;
+		}
+        
+        Employee.prototype.getEmail = function()
+        {
+        	return this.email;
+        }
+        Employee.prototype.getGender = function()
+        {
+        	return this.gender;
+        }
+
+        var employee = new Employee("Trish","Ghosh","Female","trisha@gmail.com");
+
+
+        //retrieve all the methods and properties
+        for(var property in employee)
+        {
+        	//document.write("Property : " + property + "<br/>");
+
+        	document.write("Property : " + employee[property] + "<br/>");
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>
