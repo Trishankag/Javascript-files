@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+
+</head>
+
+
+<body>
+<table>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" id="txtName"></td>
+	</tr>
+
+	<tr>
+		<td>Email</td>
+		<td><input type="text" id="txtEmail"></td>
+	</tr>
+
+	<tr>
+		<td>Gender</td>
+		<td><input type="text" id="txtGender"></td>
+	</tr>
+	<tr><td colspan="2">
+		<input type="button" value="Set Cookie" onclick="setCookie()">
+		<input type="button" value="Get Cookie" onclick="getCookie()">
+		<input type="button" value="Clear Value" onclick="clearCookie()">
+
+
+	</td></tr>
+</table>
+<script type="text/javascript">
+	/*
+   The code not able to store the multiple keys value in cookie
+
+	function setCookie()
+	{
+		var storeCookie = "Name=" + document.getElementById('txtName').value + "; Email=" + document.getElementById('txtEmail').value + "; Gender= " + document.getElementById('txtGender').value;
+    document.cookie = storeCookie;
+	}
+
+	function getCookie()
+	{
+		alert(document.cookie);
+	}*/
+   function setCookie()
+   {
+   	 var customObject = {};
+   	 customObject.name = document.getElementById('txtName').value;
+   	  customObject.Email = document.getElementById('txtEmail').value;
+   	   customObject.Gender = document.getElementById('txtGender').value;
+   	   var jsonString = JSON.stringify(customObject);
+   	   document.cookie = "cookieObject=" + jsonString;
+   }
+
+   function getCookie()
+   {
+    var nameValue = document.cookie.split("=");
+    var customObject = JSON.parse(nameValue[1]);
+    document.getElementById('txtName').value = customObject.name;
+    document.getElementById('txtEmail').value = customObject.Email;
+    document.getElementById('txtGender').value = customObject.Gender;
+
+   }
+
+   function clearCookie()
+   {
+   	document.getElementById('txtName').value = '' ;
+    document.getElementById('txtEmail').value = '' ;
+    document.getElementById('txtGender').value = '';
+
+   }
+</script>
+
+</body>
+</html>
